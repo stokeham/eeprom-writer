@@ -1,7 +1,7 @@
 # eeprom-writer
 Arduino firmware for EEPROM Writer project.
 
-This code should be compiled by the Arduino IDE and run on an Arduino Mega 2560.
+This code should be compiled by the Arduino IDE and run on an Arduino ~~Mega 2560~~ Uno.
 
 For project documentation, refer to http://danceswithferrets.org/geekblog/?page_id=903
 
