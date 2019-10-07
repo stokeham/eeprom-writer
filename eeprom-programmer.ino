@@ -30,30 +30,27 @@
 
 #include <avr/pgmspace.h>
 
-#define SHIFT_DATA 2
-#define SHIFT_CLK 3
-#define SHIFT_LATCH 4
-
-
 const char hex[] =
 {
   '0', '1', '2', '3', '4', '5', '6', '7',
   '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
 };
 
-const char version_string[] = {"EEPROM Version=0.02"};
+const char version_string[] = {"EEPROM Version=0.03"};
 
-
+// pins for Uno version
+static const int SHIFT_DATA   = 2;
+static const int SHIFT_CLK    = 3;
+static const int SHIFT_LATCH  = 4;
 static const int kPin_Data0   = 5;
 static const int kPin_Data1   = 6;
 static const int kPin_Data2   = 7;
-static const int kPin_nWE     = 13;
-static const int kPin_Data7   = 12;
-static const int kPin_Data6   = 11;
-static const int kPin_Data5   = 10;
-static const int kPin_Data4   = 9;
 static const int kPin_Data3   = 8;
-
+static const int kPin_Data4   = 9;
+static const int kPin_Data5   = 10;
+static const int kPin_Data6   = 11;
+static const int kPin_Data7   = 12;
+static const int kPin_nWE     = 13;
 
 byte g_cmd[80]; // strings received from the controller will go in here
 static const int kMaxBufferSize = 16;
@@ -133,7 +130,7 @@ void ReadEEPROM() // R<address>  - read kMaxBufferSize bytes from EEPROM, beginn
   PrintBuffer(kMaxBufferSize);
 
   Serial.println("OK");
-
+  
 //  digitalWrite(kPin_nOE, HIGH); // stops the EEPROM outputting the byte
 }
 
